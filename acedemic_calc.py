@@ -10,7 +10,7 @@ words_of_encouragment = ["Don't give up! There's always next semsester🤘","Sta
 
 
 # ask for and accept a student's last name.
-last_name = input("Enter the student's LAST name: ").title()   
+last_name = input("Enter the student's LAST name: ")   
 
 # quit processing student records if the last name entered is 'ZZZ'
 while last_name != "ZZZ":
@@ -18,18 +18,18 @@ while last_name != "ZZZ":
     try:
         # ask for and accept a student's first name.
         first_name = input("Enter the student's FIRST name: ").title()
-        student_name = first_name+"_"+last_name
+        student_name = first_name+" "+last_name.title()
             
         # ask for and accept the student's GPA as a float.
         gpa = float(input("Enter student GPA: "))
 
         # test if the student's GPA is 3.5 or greater and, if so, print a message 
         if gpa >= 3.5:
-            print(f"{" ".join(student_name.split('_'))} has made the Dean's List with a {gpa} GPA🥳")
+            print(f"{student_name} has made the Dean's List with a {gpa} GPA🥳")
 
         # test if the student's GPA is 3.25 or greater and, if so, print a message saying that the studnet has made the Honor Roll.
         elif gpa >=3.25 and gpa <3.5:
-            print(f"{" ".join(student_name.split('_'))} has made Honor Roll with a {gpa} GPA😎")
+            print(f"{student_name} has made Honor Roll with a {gpa} GPA😎")
 
         else:
             print(f"\nSorry {first_name}, you did not make the Dean's list or Honor roll this semester.")
@@ -37,11 +37,13 @@ while last_name != "ZZZ":
             - {random.choice(words_of_encouragment)}
                 """)
         
+        last_name = str(input("\nEnter the student's last name: "))
         #Prompting user to a last name. If last_name does not meet requirements for while loop, the loop will break
-        last_name = str(input("\nEnter the student's last name: ")).title()
 
     except ValueError as e:
         print({e})
+
+    
 
 print("\nGoodbye Scholar🤓")
 
