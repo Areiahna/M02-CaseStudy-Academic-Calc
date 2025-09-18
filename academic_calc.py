@@ -37,8 +37,9 @@ while last_name != "ZZZ":
             - {random.choice(words_of_encouragment)}
                 """)
         
-        last_name = str(input("\nEnter the student's last name: "))
         #Prompting user to a last name. If last_name does not meet requirements for while loop, the loop will break
+        last_name = str(input("\nEnter the student's last name: "))
+        
 
     except ValueError as e:
         print({e})
